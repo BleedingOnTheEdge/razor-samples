@@ -1,0 +1,13 @@
+{
+  "name": "@razor/samples",
+  "version": "1.0.0",
+  "description": "Community sample adapters and strategies for Razor in Node.js / TypeScript",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

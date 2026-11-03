@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Samples.Plugins.Adapters.Nobitex</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup Condition="Exists('$(MSBuildThisFileDirectory)../../../../../razor-sdk/src/Sdk/Sdk.csproj')">
+        <ProjectReference Include="$(MSBuildThisFileDirectory)../../../../../razor-sdk/src/Sdk/Sdk.csproj" />
+    </ItemGroup>
+    <ItemGroup Condition="!Exists('$(MSBuildThisFileDirectory)../../../../../razor-sdk/src/Sdk/Sdk.csproj')">
+        <PackageReference Include="BleedingOnTheEdge.Sdk" Version="1.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.9" />
+    </ItemGroup>
+
+</Project>

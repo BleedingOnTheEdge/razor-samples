@@ -1,0 +1,12 @@
+[project]
+name = "razor-samples"
+version = "1.0.0"
+description = "Community sample adapters, strategies, and hooks for Razor in Python."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "BleedingOnTheEdge" }]
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

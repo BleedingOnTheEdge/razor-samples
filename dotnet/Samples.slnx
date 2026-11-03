@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Plugins/" />
+  <Folder Name="/Plugins/Adapters/">
+    <Project Path="Plugins/Adapters/MT5/MT5.csproj" />
+    <Project Path="Plugins/Adapters/Nobitex/Nobitex.csproj" />
+  </Folder>
+  <Folder Name="/Plugins/Strategies/">
+    <Project Path="Plugins/Strategies/CfdSmtDivergence/CfdSmtDivergence.csproj" />
+  </Folder>
+  <Project Path="../../razor-sdk/src/Sdk/Sdk.csproj" />
+</Solution>

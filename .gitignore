@@ -1,0 +1,10 @@
+bin/
+obj/
+TestResults/
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.env
+.vs/
+.idea/
