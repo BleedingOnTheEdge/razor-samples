@@ -31,43 +31,52 @@ Production-ready extensions implementing Razor SDK interfaces (`BleedingOnTheEdg
 - **`Plugins/Adapters/MT5`**: MetaTrader 5 broker integration adapter supporting market data feeds and order placement.
 - **`Plugins/Adapters/Nobitex`**: Nobitex cryptocurrency exchange adapter supporting real-time crypto execution.
 - **`Plugins/Strategies/CfdSmtDivergence`**: SMT (Smart Money Technique) divergence multi-symbol strategy with integrated neural network signal filtering.
+- **`tests/Samples.UnitTests`**: Comprehensive unit tests covering market calculators, order margin math, and neural network predictions.
 
 ### 2. `Python` Stubs & Templates (`python/`)
 Scaffolded templates and IPC bridges for authoring hooks, indicators, and strategies in Python (3.11+):
-- `razor_bridge.py`: Base bridge protocol and hook interceptor interfaces.
-- `example_strategy.py`: Sample Python trading strategy structure.
+- `razor_samples/adapters/sample_broker.py`: Sample broker adapter bridge for market ticks.
+- `razor_samples/strategies/sma_crossover.py`: Sample SMA crossover strategy implementation.
+- `tests/test_samples.py`: Python unit tests executing via standard `unittest`.
 
 ### 3. `Node.js / TypeScript` Stubs & Templates (`nodejs/`)
 Scaffolded templates and IPC bridges for authoring hooks and strategies in TypeScript/JavaScript (Node 20+):
-- `src/bridge.ts`: TypeScript contract definitions for hooks and slots.
-- `src/example-hook.ts`: Sample Node.js validation hook.
+- `src/adapters/sampleBroker.ts`: TypeScript broker adapter interface and sample implementation.
+- `src/strategies/rsiStrategy.ts`: TypeScript RSI trading strategy stub.
 
 ---
 
 ## 💻 Getting Started
 
-### Building .NET Samples
+### Building and Testing .NET Samples
 Prerequisites: [.NET 10.0 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 
 ```bash
 cd dotnet
 dotnet build Samples.slnx
+dotnet test Samples.slnx
 ```
 
-### Exploring Python Stubs
+### Running Python Stubs & Tests
 Prerequisites: [Python 3.11+](https://www.python.org/)
 
 ```bash
-cd python
-python3 example_strategy.py
+python3 -m unittest discover -s python/tests
 ```
 
-### Exploring Node.js Stubs
+### Building Node.js Stubs
 Prerequisites: [Node.js 20+](https://nodejs.org/)
 
 ```bash
 cd nodejs
-pnpm install # or npm install
+pnpm install
+pnpm run build
+```
+
+### Running All Autonomous Sample Tests
+```bash
+bash scripts/test.sh
+```
 pnpm run build
 ```
 

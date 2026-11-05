@@ -7,6 +7,10 @@
         <RootNamespace>Samples.Plugins.Adapters.Nobitex</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+        <InternalsVisibleTo Include="Samples.UnitTests" />
+    </ItemGroup>
+
     <ItemGroup Condition="Exists('$(MSBuildThisFileDirectory)../../../../../razor-sdk/src/Sdk/Sdk.csproj')">
         <ProjectReference Include="$(MSBuildThisFileDirectory)../../../../../razor-sdk/src/Sdk/Sdk.csproj" />
     </ItemGroup>

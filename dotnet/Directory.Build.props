@@ -11,5 +11,8 @@
         <Authors>BleedingOnTheEdge</Authors>
         <Company>BleedingOnTheEdge</Company>
         <Copyright>© 2026 BleedingOnTheEdge</Copyright>
+
+        <!-- Sdk resolution when cloned in organization tree -->
+        <RazorSdkPath Condition="Exists('$(MSBuildThisFileDirectory)../../razor-sdk/src/Sdk/Sdk.csproj')">$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)../../razor-sdk/src/Sdk/Sdk.csproj'))</RazorSdkPath>
     </PropertyGroup>
 </Project>

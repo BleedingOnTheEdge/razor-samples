@@ -2,13 +2,23 @@
 set -eo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
 echo "🧪 Testing Razor Samples..."
-if [ -d "${ROOT_DIR}/python" ]; then
-    echo "▶ Verifying Python stubs syntax..."
-    python3 -m py_compile "${ROOT_DIR}/python/example_strategy.py" "${ROOT_DIR}/python/razor_bridge.py"
+
+# 1. Test .NET Samples
+echo "▶ Running .NET sample unit tests..."
+dotnet test "${ROOT_DIR}/dotnet/Samples.slnx" -c "${1:-Release}" --verbosity minimal
+
+# 2. Test Python Samples
+if [ -d "${ROOT_DIR}/python/tests" ]; then
+    echo "▶ Running Python sample tests..."
+    python3 -m unittest discover -s "${ROOT_DIR}/python/tests" -v
 fi
+
+# 3. Test Node.js / TypeScript Samples
 if [ -d "${ROOT_DIR}/nodejs" ]; then
-    echo "▶ Verifying Node.js stubs syntax..."
-    node --check "${ROOT_DIR}/nodejs/src/bridge.ts" 2>/dev/null || true
+    echo "▶ Verifying Node.js / TypeScript samples..."
+    (cd "${ROOT_DIR}/nodejs" && pnpm run build)
 fi
-echo "✓ Razor Samples checks passed."
+
+echo "✓ All Razor Samples tests and verifications passed."
