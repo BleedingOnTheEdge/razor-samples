@@ -1,0 +1,24 @@
+{
+  "name": "razor-samples-root",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": ".",
+  "targets": {
+    "lint": {
+      "command": "dotnet format --verify-no-changes dotnet/Samples.slnx"
+    },
+    "test": {
+      "command": "bash scripts/test.sh"
+    },
+    "build": {
+      "command": "bash scripts/build.sh"
+    },
+    "audit": {
+      "command": "dotnet list dotnet/Samples.slnx package --vulnerable --include-transitive || true"
+    }
+  },
+  "tags": [
+    "profile:d",
+    "scope:samples"
+  ]
+}
