@@ -1,6 +1,7 @@
 {
   "name": "@razor/samples",
   "version": "1.0.0",
+  "private": true,
   "description": "Community sample adapters and strategies for Razor in Node.js / TypeScript",
   "type": "module",
   "scripts": {
