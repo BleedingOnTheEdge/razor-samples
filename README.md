@@ -27,7 +27,7 @@ This repository is part of the **BleedingOnTheEdge** ecosystem:
 This repository is organized by language ecosystem to support native .NET extensions today and upcoming polyglot bridges:
 
 ### 1. `.NET 10` Solutions (`dotnet/`)
-Production-ready extensions implementing Razor SDK interfaces (`BleedingOnTheEdge.Sdk`):
+Production-ready extensions implementing Razor SDK interfaces (`BleedingOnTheEdge.Razor.Sdk`):
 - **`Plugins/Adapters/MT5`**: MetaTrader 5 broker integration adapter supporting market data feeds and order placement.
 - **`Plugins/Adapters/Nobitex`**: Nobitex cryptocurrency exchange adapter supporting real-time crypto execution.
 - **`Plugins/Strategies/CfdSmtDivergence`**: SMT (Smart Money Technique) divergence multi-symbol strategy with integrated neural network signal filtering.

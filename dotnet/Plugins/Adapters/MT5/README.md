@@ -16,7 +16,7 @@ The adapter uses a decoupled TCP socket architecture to communicate with MT5 wit
 ```
 
 - **`Mql5BridgeEA.mq5`**: Lightweight Expert Advisor running on any chart in MT5. Uses WinAPI `winsock.mqh` to listen for incoming connections from Razor.
-- **`Mt5Adapter.cs`**: Implements `IBrokerAdapter` from `BleedingOnTheEdge.Sdk`. Handles connection lifecycle, market data streaming, and order dispatch.
+- **`Mt5Adapter.cs`**: Implements `IBrokerAdapter` from `BleedingOnTheEdge.Razor.Sdk`. Handles connection lifecycle, market data streaming, and order dispatch.
 - **`Mt5BridgeClient.cs`**: High-performance socket client managing framed message serialization, command request/response, and heartbeat pings.
 - **`Mt5MarketCalculator.cs`**: Implements margin calculations (Forex, CFD, Futures), pip values, and contract sizing.
 - **`Mt5MessageProtocol.cs`**: Binary / framed text message protocol specification.

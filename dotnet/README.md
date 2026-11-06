@@ -1,6 +1,6 @@
 # Razor .NET Sample Plugins (`dotnet`)
 
-This directory contains official reference plugins, custom broker adapters, and algorithmic trading strategies implemented in C# (.NET 10) targeting the [`BleedingOnTheEdge.Sdk`](https://github.com/BleedingOnTheEdge/razor-sdk).
+This directory contains official reference plugins, custom broker adapters, and algorithmic trading strategies implemented in C# (.NET 10) targeting the [`BleedingOnTheEdge.Razor.Sdk`](https://github.com/BleedingOnTheEdge/razor-sdk).
 
 ---
 

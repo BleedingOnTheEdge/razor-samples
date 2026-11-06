@@ -15,7 +15,7 @@
         <ProjectReference Include="$(MSBuildThisFileDirectory)../../../../../razor-sdk/src/Sdk/Sdk.csproj" />
     </ItemGroup>
     <ItemGroup Condition="!Exists('$(MSBuildThisFileDirectory)../../../../../razor-sdk/src/Sdk/Sdk.csproj')">
-        <PackageReference Include="BleedingOnTheEdge.Sdk" Version="1.0.0" />
+        <PackageReference Include="BleedingOnTheEdge.Razor.Sdk" Version="1.0.0" />
     </ItemGroup>
 
     <ItemGroup>

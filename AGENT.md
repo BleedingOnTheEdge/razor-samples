@@ -33,6 +33,6 @@ This repository contains official community sample plugins, custom broker adapte
 ---
 
 ## 3. Tier 1 Governance Invariants
-- All sample strategies and broker adapters must consume `@razor/sdk` or `BleedingOnTheEdge.Sdk`.
+- All sample strategies and broker adapters must consume `@razor/sdk` or `BleedingOnTheEdge.Razor.Sdk`.
 - Zero broken imports or unresolved dependencies.
 - Multi-tier branch promotion (`main`, `test`, `stage`, `prod`). Human-only production merge.

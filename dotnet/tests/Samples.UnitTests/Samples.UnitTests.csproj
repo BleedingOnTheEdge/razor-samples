@@ -30,7 +30,7 @@
         <ProjectReference Include="$(RazorSdkPath)" />
     </ItemGroup>
     <ItemGroup Condition="'$(RazorSdkPath)' == ''">
-        <PackageReference Include="BleedingOnTheEdge.Sdk" Version="1.0.0" />
+        <PackageReference Include="BleedingOnTheEdge.Razor.Sdk" Version="1.0.0" />
     </ItemGroup>
 
 </Project>
