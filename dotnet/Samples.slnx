@@ -7,6 +7,9 @@
   <Folder Name="/Plugins/Strategies/">
     <Project Path="Plugins/Strategies/CfdSmtDivergence/CfdSmtDivergence.csproj" />
   </Folder>
+  <Folder Name="/Plugins/Hooks/">
+    <Project Path="Plugins/Hooks/TelegramNotifier/TelegramNotifier.csproj" />
+  </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Samples.UnitTests/Samples.UnitTests.csproj" />
   </Folder>
