@@ -24,6 +24,7 @@
         <ProjectReference Include="../../Plugins/Adapters/MT5/MT5.csproj" />
         <ProjectReference Include="../../Plugins/Adapters/Nobitex/Nobitex.csproj" />
         <ProjectReference Include="../../Plugins/Strategies/CfdSmtDivergence/CfdSmtDivergence.csproj" />
+        <ProjectReference Include="../../Plugins/Hooks/TelegramNotifier/TelegramNotifier.csproj" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(RazorSdkPath)' != ''">

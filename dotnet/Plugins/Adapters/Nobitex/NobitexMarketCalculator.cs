@@ -15,6 +15,11 @@ internal sealed class NobitexMarketCalculator : IMarketCalculator
     public double NormalizeVolume(SymbolProperties symbolProps, double requestedVolume)
     {
         ArgumentNullException.ThrowIfNull(symbolProps);
+        if (requestedVolume < 0)
+        {
+            throw new ArgumentException("Volume cannot be negative.", nameof(requestedVolume));
+        }
+
         double step = symbolProps.MinVolume > 0 ? symbolProps.MinVolume : 0.0001;
         double lots = Math.Round(requestedVolume / step, MidpointRounding.AwayFromZero);
         return Math.Max(lots * step, step);
@@ -24,6 +29,11 @@ internal sealed class NobitexMarketCalculator : IMarketCalculator
     public double NormalizePrice(SymbolProperties symbolProps, double requestedPrice)
     {
         ArgumentNullException.ThrowIfNull(symbolProps);
+        if (requestedPrice < 0)
+        {
+            throw new ArgumentException("Price cannot be negative.", nameof(requestedPrice));
+        }
+
         double ts = symbolProps.TickSize > 0 ? symbolProps.TickSize : 1.0;
         return Math.Round(requestedPrice / ts, MidpointRounding.AwayFromZero) * ts;
     }
