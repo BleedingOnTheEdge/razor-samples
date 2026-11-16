@@ -22,6 +22,15 @@ class SampleBrokerAdapter:
         self.is_connected = True
         return True
 
+    def disconnect(self) -> bool:
+        """Terminates connection to the broker."""
+        self.is_connected = False
+        return True
+
+    def subscribe(self, symbol: str) -> bool:
+        """Subscribes to market tick stream for a symbol."""
+        return True
+
     def on_tick(self, tick: MarketTick) -> None:
         """Handles incoming market tick."""
         pass
