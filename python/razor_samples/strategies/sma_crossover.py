@@ -14,6 +14,23 @@ class SmaCrossoverStrategy:
         self.slow_period = slow_period
         self.prices: List[float] = []
 
+    def on_tick(self, tick: float | object) -> str:
+        """Processes incoming tick and returns trading signal: BUY, SELL, or HOLD."""
+        price = getattr(tick, 'bid', tick) if not isinstance(tick, (int, float)) else tick
+        return self.on_price_update(float(price))
+
+    def calculate_signals(self) -> str:
+        """Calculates current signal based on accumulated prices."""
+        if len(self.prices) < self.slow_period:
+            return "HOLD"
+        fast_sma = sum(self.prices[-self.fast_period:]) / self.fast_period
+        slow_sma = sum(self.prices[-self.slow_period:]) / self.slow_period
+        if fast_sma > slow_sma:
+            return "BUY"
+        elif fast_sma < slow_sma:
+            return "SELL"
+        return "HOLD"
+
     def on_price_update(self, price: float) -> str:
         """Evaluates price and returns trading signal: BUY, SELL, or HOLD."""
         self.prices.append(price)
